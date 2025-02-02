@@ -789,3 +789,181 @@ When a Large Language Model (LLM) processes a prompt, it goes through **two main
 💡 **The faster the Prefill, the quicker AI understands the input. The faster the Decode, the quicker AI generates responses!**  
 
 ✅ **This is why optimizing both phases makes AI chat faster!** 🚀
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# LLM Inference Explained with TTFT, TPS, and Memory (In Simple Terms)  
+
+👉 **"LLM Inference = AI thinking and responding in two steps: Prefill (Understanding) and Decode (Generating)."**  
+
+When an **LLM (Large Language Model) generates text**, it does two things:  
+1. **Prefill Phase** → Reads and understands the input.  
+2. **Decode Phase** → Generates words step by step.  
+
+---
+
+## **1️⃣ What is TTFT (Time to First Token) and TPS (Tokens Per Second)?**  
+### **TTFT (Time to First Token) = How long AI takes to start responding**  
+📌 **Before AI gives an answer, it first needs to "read" the input.**  
+- The time it takes for AI to **process the prompt and generate the first word** is called **TTFT**.  
+- **Shorter TTFT = Faster AI response start!**  
+
+### **TPS (Tokens Per Second) = How fast AI generates words**  
+📌 **Once AI starts responding, it generates words one by one.**  
+- **TPS = The number of words AI generates per second.**  
+- **Higher TPS = AI speaks faster!**  
+
+---
+
+## **2️⃣ TTFT & TPS in Prefill and Decode Phases**  
+📌 **How do these two phases affect response speed?**  
+
+| **Phase** | **What Happens?** | **Affects TTFT or TPS?** |
+|-----------|------------------|------------------|
+| **Prefill Phase** | AI reads and processes input | 🟢 **TTFT (Faster prefill = lower TTFT)** |
+| **Decode Phase** | AI generates response word by word | 🔵 **TPS (Faster decode = higher TPS)** |
+
+✅ **Optimizing TTFT** → Makes the AI **start responding faster**.  
+✅ **Optimizing TPS** → Makes the AI **generate words faster**.  
+
+---
+
+## **3️⃣ LLM Memory: Model Weights & KV Cache Size**  
+📌 **AI models need memory to think and remember past words. Two main types of memory are used:**  
+
+### **Model Weights = AI's "Brain Knowledge"**  
+👉 **"Everything the AI knows is stored here."**  
+- These are the **fixed rules & knowledge the AI has learned** from training.  
+- Model weights are **very large files** (like 7B, 13B, or 65B parameters).  
+- **They don’t change when you chat—only used to generate responses.**  
+
+💡 **Example:** AI remembers that **"Paris is the capital of France"** because it’s stored in the model weights.  
+
+---
+
+### **KV Cache Size = AI's "Short-Term Memory"**  
+👉 **"What the AI remembers from the current conversation."**  
+- AI stores past words in a **KV Cache** (Key-Value Cache).  
+- **Larger KV Cache = AI remembers more words in long conversations.**  
+- If KV Cache is **too small**, AI might **forget earlier parts of the conversation**.  
+
+💡 **Example:**  
+- **Small KV Cache** → AI forgets what you said 5 messages ago.  
+- **Large KV Cache** → AI remembers the full chat history.  
+
+---
+
+## **4️⃣ How Does Memory Affect LLM Performance?**  
+📌 **More model weights = More knowledge, but slower loading.**  
+📌 **More KV Cache = Better memory, but needs more RAM.**  
+
+✅ **For fast AI, balance model size & KV Cache memory!** 🚀  
+
+---
+
+## **TL;DR**  
+🟢 **TTFT (Time to First Token)** → How long AI takes to **start** responding (depends on Prefill).  
+🔵 **TPS (Tokens Per Second)** → How fast AI **generates words** (depends on Decode).  
+🧠 **Model Weights** → AI's **brain knowledge** (large but fixed).  
+📝 **KV Cache** → AI's **short-term memory** (affects long chats).  
+
+🚀 **Optimizing these makes AI faster, smarter, and better at remembering conversations!**
+
+
+
+
+
+
+# Latency, Throughput, and Bandwidth in LLMs (Explained Simply)  
+
+👉 **"How fast AI processes requests, how many it handles at once, and how much data flows!"**  
+
+When working with **Large Language Models (LLMs)**, three key performance factors affect their speed and efficiency:  
+
+1. **Latency** → How long AI takes to respond.  
+2. **Throughput** → How many requests AI handles per second.  
+3. **Bandwidth** → How much data AI transfers while processing requests.  
+
+---
+
+## **1️⃣ What is Latency?**  
+📌 **"How long does AI take to reply after you ask a question?"**  
+- **Latency = Response time** (measured in milliseconds or seconds).  
+- Lower latency means **faster responses**.  
+- Affected by **model size, hardware, and network speed**.  
+
+### **Example:**  
+📝 **You ask:** *"What is the capital of Japan?"*  
+⏳ **AI takes 2 seconds to reply:** *"Tokyo."*  
+✅ **Latency = 2 seconds**  
+
+💡 **Lower latency = Faster AI responses!**  
+
+---
+
+## **2️⃣ What is Throughput?**  
+📌 **"How many AI requests can be processed in one second?"**  
+- **Throughput = Number of queries or tokens processed per second.**  
+- Higher throughput means **handling more users at the same time**.  
+- Important for **AI servers handling many users or chatbot systems.**  
+
+### **Example:**  
+🚀 **AI system processes 10,000 tokens per second.**  
+✅ **Throughput = 10,000 TPS (Tokens Per Second)**  
+
+💡 **Higher throughput = More users can chat with AI at once!**  
+
+---
+
+## **3️⃣ What is Bandwidth?**  
+📌 **"How much data is moved while processing AI responses?"**  
+- **Bandwidth = Amount of data transferred between AI and users.**  
+- Measured in **Megabytes per second (MBps) or Gigabits per second (Gbps).**  
+- Affects **how smoothly AI handles large inputs and outputs.**  
+
+### **Example:**  
+📡 **Your chatbot sends and receives 100MB of text data per second.**  
+✅ **Bandwidth = 100MBps**  
+
+💡 **Higher bandwidth = AI can send & receive more data at once!**  
+
+---
+
+## **4️⃣ How Do They Affect AI Performance?**  
+
+| **Factor** | **What It Measures?** | **Why It Matters?** |
+|------------|---------------------|-------------------|
+| **Latency** | Time to respond | Lower latency = Faster replies |
+| **Throughput** | How many requests per second | Higher throughput = More users handled |
+| **Bandwidth** | Data transfer speed | More bandwidth = Faster input/output |
+
+✅ **Optimizing all three makes AI chat faster, more scalable, and more efficient!** 🚀
+
+
+
+
+
+
+
+
+
+
+
+
+
+
