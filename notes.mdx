@@ -724,3 +724,68 @@ KV (Key-Value) Caching is a technique used in Large Language Models (LLMs) to **
 📉 **Reduces memory usage** → Useful for chatbots, real-time AI, and long conversations.  
 
 🚀 **It’s like using a calculator memory—store past results so you don’t have to recalculate everything!**
+![KV Caching Diagram](kvcaching.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Prefill & Decode Phases in LLMs (Explained Simply)  
+
+👉 **"First, AI reads the input (Prefill), then it starts responding (Decode)!"**  
+
+When a Large Language Model (LLM) processes a prompt, it goes through **two main phases:**  
+1. **Prefill Phase** → Understanding the input text.  
+2. **Decode Phase** → Generating the response.  
+
+---
+
+## **1️⃣ What is the Prefill Phase?**  
+📌 **"Reading and Understanding the Prompt!"**  
+- The AI **takes in the full input sentence** and **processes it all at once**.  
+- It computes **Key (K) and Value (V) embeddings** for each word so it can refer back to them later.  
+- This is like **a student reading a question before answering it!**  
+
+### **Example:**  
+📝 **Prompt:** "What is the capital of France?"  
+📌 **Prefill Phase:**  
+- The model reads: **"What", "is", "the", "capital", "of", "France"**  
+- It stores important details like:  
+  - "capital" relates to "France"  
+  - "France" is a country  
+
+✅ **This phase happens only once at the start!**  
+
+---
+
+## **2️⃣ What is the Decode Phase?**  
+📌 **"Generating the Response Word by Word!"**  
+- Now that the AI **understands the input**, it **starts producing the answer step by step**.  
+- It **looks at past words (using KV Caching)** and **predicts the next word**.  
+- This is like **a student writing an answer one word at a time!**  
+
+### **Example:**  
+📌 **Decode Phase:**  
+1️⃣ The model predicts **"Paris"**  
+2️⃣ If more context is needed, it might continue: **"Paris is the capital of France."**  
+
+✅ **This phase happens for every new word until the response is complete!**  
+
+---
+
+## **3️⃣ How Do Prefill & Decode Work Together?**  
+📌 **Think of it like a quiz:**  
+- **Prefill Phase** = Reading the question carefully.  
+- **Decode Phase** = Writing the answer word by word.  
+
+💡 **The faster the Prefill, the quicker AI understands the input. The faster the Decode, the quicker AI generates responses!**  
+
+✅ **This is why optimizing both phases makes AI chat faster!** 🚀
