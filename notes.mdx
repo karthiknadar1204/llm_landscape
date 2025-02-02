@@ -388,3 +388,84 @@ Let’s break it down step by step. 👇
 🔗 **LoRA** → A PEFT technique that **adds small adapters** instead of modifying the whole model.  
 
 🚀 **LoRA lets you fine-tune massive LLMs efficiently, even on small GPUs, while keeping the base model unchanged!**
+
+
+
+
+
+
+
+
+
+# Prompt Tuning Explained in Simple Terms  
+
+👉 **"Teach the AI by modifying the prompt instead of changing the model!"**  
+
+Prompt tuning is a way to improve how an AI model responds **without fine-tuning its parameters**. Instead of changing the model itself, we **optimize the prompts** (the input text we give to the AI) so it gives better answers.
+
+---
+
+## **1️⃣ What is Prompt Tuning?**  
+📌 **Instead of changing the AI, we change how we talk to it!**  
+- Instead of modifying billions of parameters, we **find the best way to ask questions** so the model gives better responses.  
+- Works by adding **learnable prompt tokens** (extra words) at the beginning of the input to guide the AI.  
+
+✅ **Benefit** → Faster, cheaper, and doesn’t require retraining the whole model!  
+
+---
+
+## **2️⃣ Example of Prompt Tuning**  
+Imagine you have a **basic AI model** that sometimes gives incorrect answers. Instead of retraining it, we **modify the prompt** to improve its output.
+
+### **Example 1: Without Prompt Tuning**  
+📝 **Prompt:** `"Translate 'Hello' to French."`  
+🤖 **AI Response:** `"Bonjour"` ✅ (Good)  
+
+📝 **Prompt:** `"Translate 'Morning' to French."`  
+🤖 **AI Response:** `"Matin"` ❌ (Incorrect, should be 'Bonjour' in some contexts)  
+
+### **Example 2: With Prompt Tuning**  
+We **add special instructions** to improve accuracy:  
+
+📝 **Tuned Prompt:** `"You are a French translator. Translate the following word carefully:"`  
+🤖 **AI Response:** `"Bonjour"` ✅ (More consistent!)  
+
+---
+
+## **3️⃣ How Does Prompt Tuning Work?**  
+Instead of giving **a normal input**, we **add trainable prompt tokens** (extra words) at the start of the input text.  
+
+🔹 **Normal Prompt:**  
+> `"What is the capital of France?"`  
+
+🔹 **Tuned Prompt (with extra prompt tokens):**  
+> `"Think step by step before answering. What is the capital of France?"`  
+
+✅ The AI **learns** from these extra tokens and starts giving better answers **without modifying its main model**!  
+
+---
+
+## **4️⃣ Benefits of Prompt Tuning**  
+✅ **No need to fine-tune the entire model** → Saves time & resources.  
+✅ **Works on large models** without modifying parameters.  
+✅ **Can be applied across multiple tasks** like translation, summarization, and question-answering.  
+✅ **Helps align AI behavior with human expectations**.  
+
+---
+
+## **5️⃣ Prompt Tuning vs Fine-Tuning vs LoRA**  
+| **Feature** | **Prompt Tuning** | **Fine-Tuning** | **LoRA (PEFT)** |
+|------------|----------------|--------------|-------------|
+| **Changes Model?** | ❌ No | ✅ Yes | ✅ Yes (partially) |
+| **Uses Extra Parameters?** | ✅ Yes (small learnable prompts) | ✅ Yes (entire model) | ✅ Yes (small adapter layers) |
+| **Computational Cost** | 🟢 Very Low | 🔴 High | 🟡 Medium |
+| **Best Use Case** | Quick improvements in responses | Customizing AI for new tasks | Efficient fine-tuning for specialized tasks |
+
+---
+
+## **TL;DR**  
+🛠️ **Prompt Tuning** → Optimizing the input prompt instead of changing the model.  
+⚡ **Fast & Cheap** → No retraining, just better prompts!  
+💡 **Works for many tasks** → Translation, summarization, chatbot tuning.  
+
+🚀 **It’s like teaching AI how to think better—without changing its brain!**
