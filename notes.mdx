@@ -738,7 +738,7 @@ KV (Key-Value) Caching is a technique used in Large Language Models (LLMs) to **
 
 
 
-# Prefill & Decode Phases in LLMs (Explained Simply)  
+# Prefill & Decode Phases in LLMs 
 
 👉 **"First, AI reads the input (Prefill), then it starts responding (Decode)!"**  
 
@@ -807,7 +807,7 @@ When a Large Language Model (LLM) processes a prompt, it goes through **two main
 
 
 
-# LLM Inference Explained with TTFT, TPS, and Memory (In Simple Terms)  
+# LLM Inference Explained with TTFT, TPS, and Memory 
 
 👉 **"LLM Inference = AI thinking and responding in two steps: Prefill (Understanding) and Decode (Generating)."**  
 
@@ -889,7 +889,7 @@ When an **LLM (Large Language Model) generates text**, it does two things:
 
 
 
-# Latency, Throughput, and Bandwidth in LLMs (Explained Simply)  
+# Latency, Throughput, and Bandwidth in LLMs 
 
 👉 **"How fast AI processes requests, how many it handles at once, and how much data flows!"**  
 
@@ -967,3 +967,85 @@ When working with **Large Language Models (LLMs)**, three key performance factor
 
 
 
+# L1, L2, L3 Cache, KV Cache Optimization, Flash Attention & Paged Attention
+
+👉 **"How AI stores and retrieves data quickly to improve performance!"**  
+
+When AI models (like LLMs) process text, they rely on **fast memory storage and efficient retrieval techniques** to generate responses quickly. This involves:  
+
+1. **L1, L2, L3 Cache** → The CPU’s memory hierarchy for fast access.  
+2. **KV Cache Optimization** → Making AI models remember past words efficiently.  
+3. **Flash Attention** → A method to speed up AI’s focus (attention) on important words.  
+4. **Paged Attention** → A way to manage memory better when AI has a long conversation.  
+
+---
+
+## **1️⃣ What is L1, L2, L3 Cache?**  
+📌 **"Super-fast memory inside the processor to speed up tasks!"**  
+
+The **CPU (Processor) has three levels of cache memory** to store frequently used data **so it doesn't have to fetch it from RAM every time**:  
+
+| **Cache Type** | **Size** | **Speed** | **Location** |
+|--------------|--------|--------|----------|
+| **L1 Cache** | Very Small (KBs) | **Fastest** ⚡ | Inside each CPU core |
+| **L2 Cache** | Medium (MBs) | **Slower than L1** | Shared by some CPU cores |
+| **L3 Cache** | Largest (MBs-GBs) | **Slowest of the three** | Shared by all CPU cores |
+
+💡 **Example:**  
+- **L1 Cache** = Your brain remembering what you just read 2 seconds ago.  
+- **L2 Cache** = Your brain recalling what you read an hour ago.  
+- **L3 Cache** = Your brain remembering something from last week (slower but still useful).  
+
+✅ **More L1, L2, L3 Cache = Faster processing for AI models!**  
+
+---
+
+## **2️⃣ What is KV Cache Optimization?**  
+📌 **"Making AI remember past words efficiently for faster responses!"**  
+
+- **KV Cache stores past words** (Keys & Values) so AI doesn’t have to reprocess them.  
+- Optimizing it helps AI **use less memory and run faster**.  
+- Used in **LLMs to improve decoding speed** in conversations.  
+
+✅ **Good KV Cache optimization = Faster AI responses with less GPU memory usage!**  
+
+---
+
+## **3️⃣ What is Flash Attention?**  
+📌 **"A faster way for AI to focus on important words without wasting memory!"**  
+
+- Normally, AI **processes all words at once**, which **slows it down**.  
+- **Flash Attention** only **stores and computes what’s necessary**.  
+- **Reduces memory usage and speeds up AI’s ability to understand text.**  
+
+💡 **Example:**  
+- **Without Flash Attention:** AI reads **every word in a book** to answer a question.  
+- **With Flash Attention:** AI **skips unimportant words** and **focuses only on what matters**.  
+
+✅ **Flash Attention = Faster AI with better memory usage!** 🚀  
+
+---
+
+## **4️⃣ What is Paged Attention?**  
+📌 **"Managing KV Cache like a notebook with pages!"**  
+
+- AI **stores past words in memory** (KV Cache).  
+- If the cache **fills up**, AI needs a **smart way to manage old words**.  
+- **Paged Attention breaks memory into pages** (like a notebook).  
+- **Instead of deleting old words, AI loads and unloads pages as needed**.  
+
+💡 **Example:**  
+- **Without Paged Attention:** AI **forgets old words** when memory is full.  
+- **With Paged Attention:** AI **keeps old words on "pages" and brings them back when needed**.  
+
+✅ **Paged Attention = AI remembers longer conversations without slowing down!**  
+
+---
+
+## **5️⃣ TL;DR**  
+🧠 **L1, L2, L3 Cache** → Fast memory inside the processor for quick data access.  
+⚡ **KV Cache Optimization** → Makes AI remember past words more efficiently.  
+🚀 **Flash Attention** → AI focuses only on important words for faster processing.  
+📖 **Paged Attention** → AI manages memory like notebook pages for long conversations.  
+
+✅ **Optimizing these makes AI faster, smarter, and more memory-efficient!** 🚀
